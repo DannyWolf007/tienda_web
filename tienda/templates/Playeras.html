@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalones - Tienda de Ropa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Agrega estilos adicionales si es necesario */
+    </style>
+</head>
+
+<body class="font-roboto bg-gray-100">
+
+
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/40" alt="Logo de la tienda" class="h-10 w-10">
+                <h1 class="text-2xl font-bold ml-3">Tienda de Ropa</h1>
+            </div>
+            <nav class="flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">Inicio</a>
+                <a href="sobre-nosotros.html" class="text-gray-700 hover:text-blue-600">Sobre Nosotros</a>
+                <a href="contacto.html" class="text-gray-700 hover:text-blue-600">Contacto</a>
+                <a href="login.html" class="text-gray-700 hover:text-blue-600">Iniciar Sesión</a>
+                <a href="usuario.html" class="text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-user-circle text-xl"></i>
+                    <!-- Icono de usuario -->
+                </a>
+                <a href="/carrito" class="text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <!-- Icono del carrito -->
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Categoría de Pantalones -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold mb-6">Playeras</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            <!-- Producto 1 -->
+            <div class="bg-white border rounded-lg shadow-md overflow-hidden">
+                <img src="https://novocolor.com.gt/wp-content/uploads/2021/01/Playera-Aqua-300x300.jpg" alt="Playera 1" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">Playera celeste</h3>
+                    <p class="text-gray-600">Playera, de corte moderno, ideal para ocasiones casuales.</p>
+                    <p class="text-gray-700 font-bold">$29.99</p>
+                    <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="bg-white border rounded-lg shadow-md overflow-hidden">
+                <img src="https://nao.com.mx/cdn/shop/products/21_46496caa-c213-4daa-ae65-d96b8fd86e14.jpg?v=1606172004" alt="Playera 2" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">Playera Polo</h3>
+                    <p class="text-gray-600">Playera Polo, ideal para un look casual y cómodo.</p>
+                    <p class="text-gray-700 font-bold">$34.99</p>
+                    <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="bg-white border rounded-lg shadow-md overflow-hidden">
+                <img src="https://i5.walmartimages.com/asr/e5e5d201-db8e-4c64-939d-5fe73e7bf596.4d1b542bc1bb9d59095a693a2f7d392e.png?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Playera 3" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">Playera de licra</h3>
+                    <p class="text-gray-600">Playera de licra, perfecto para climas cálidos.</p>
+                    <p class="text-gray-700 font-bold">$49.99</p>
+                    <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="bg-white border rounded-lg shadow-md overflow-hidden">
+                <img src="https://www.progresivajeans.com/cdn/shop/files/11.1.23_CAM1_A20_MC_CN_BLANCO.jpg?v=1697497555" alt="Playera 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">Camisa</h3>
+                    <p class="text-gray-600">Elegante camisa, perfecto para ocasiones formales.</p>
+                    <p class="text-gray-700 font-bold">$79.99</p>
+                    <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-6 shadow-md">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-600">© 2024 Tienda de Ropa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

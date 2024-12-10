@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Tienda de Ropa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="font-roboto bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/40" alt="Logo de la tienda" class="h-10 w-10">
+                <h1 class="text-2xl font-bold ml-3">Tienda de Ropa</h1>
+            </div>
+            <nav class="flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">Inicio</a>
+                <a href="sobre-nosotros.html" class="text-gray-700 hover:text-blue-600">Sobre Nosotros</a>
+                <a href="contacto.html" class="text-gray-700 hover:text-blue-600">Contacto</a>
+                <a href="login.html" class="text-gray-700 hover:text-blue-600">Iniciar Sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Formulario de Registro -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold mb-6">Registrarse</h2>
+        <form action="procesar-registro.php" method="POST" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-semibold">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="Correo electrónico" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700 font-semibold">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+            </div>
+            <div class="mb-4">
+                <label for="confirm_password" class="block text-gray-700 font-semibold">Confirmar Contraseña</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmar contraseña" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">Registrarse</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-6 shadow-md">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-600">© 2024 Tienda de Ropa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

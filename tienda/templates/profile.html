@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Perfil de {{ user.username }}</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+        <h4>Información del Usuario</h4>
+        {{ user_form.as_p }}
+    </div>
+    <div>
+        <h4>Información del Perfil</h4>
+        {{ profile_form.as_p }}
+    </div>
+    <button type="submit">Guardar Cambios</button>
+</form>
+
+<div>
+    <h3>Avatar Actual:</h3>
+    <img src="{{ user.profile.avatar.url }}" alt="Avatar" width="150">
+</div>
+{% endblock %}

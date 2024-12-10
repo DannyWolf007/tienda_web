@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Tienda de Ropa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Agrega estilos adicionales si es necesario */
+    </style>
+</head>
+
+<body class="font-roboto bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/40" alt="Logo de la tienda" class="h-10 w-10">
+                <h1 class="text-2xl font-bold ml-3">Tienda de Ropa</h1>
+            </div>
+            <nav class="flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">Inicio</a>
+                <a href="sobre-nosotros.html" class="text-gray-700 hover:text-blue-600">Sobre Nosotros</a>
+                <a href="contacto.html" class="text-gray-700 hover:text-blue-600">Contacto</a>
+                <a href="login.html" class="text-gray-700 hover:text-blue-600">Iniciar Sesión</a>
+                <a href="usuario.html" class="text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-user-circle text-xl"></i>
+                    <!-- Icono de usuario -->
+                </a>
+                <a href="carrito.html" class="text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <!-- Icono del carrito -->
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Carrito de compras -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold mb-6">Carrito de Compras</h2>
+        <div id="cart-items" class="space-y-4">
+            <!-- Los productos del carrito se agregarán aquí dinámicamente -->
+        </div>
+
+        <div class="flex justify-between mt-6">
+            <p class="text-xl font-semibold">Total: $<span id="cart-total">0.00</span></p>
+            <button onclick="clearCart()" class="bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700">Vaciar Carrito</button>
+        </div>
+
+        <div class="mt-6">
+            <button onclick="window.location.href = 'index.html'" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">Continuar Comprando</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-6 shadow-md">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-600">© 2024 Tienda de Ropa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Función para cargar los productos en el carrito
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItemsContainer.innerHTML = ''; // Limpiar los productos previos
+
+            let total = 0;
+
+            cart.forEach(item => {
+                // Crear un contenedor para cada producto del carrito
+                const productElement = document.createElement('div');
+                productElement.classList.add('bg-white', 'p-4', 'border', 'rounded-lg', 'shadow-md', 'flex', 'justify-between', 'items-center');
+
+                const productDetails = document.createElement('div');
+                productDetails.classList.add('flex', 'items-center');
+                productDetails.innerHTML = `
+                    <img src="${item.img}" alt="${item.name}" class="w-16 h-16 object-cover mr-4">
+                    <div>
+                        <p class="font-semibold">${item.name}</p>
+                        <p class="text-gray-600">Precio: $${item.price}</p>
+                        <p class="text-gray-600">Cantidad: ${item.quantity}</p>
+                    </div>
+                `;
+
+                const productActions = document.createElement('div');
+                productActions.classList.add('flex', 'items-center');
+                productActions.innerHTML = `
+                    <button onclick="updateQuantity('${item.id}', -1)" class="bg-gray-600 text-white py-1 px-2 rounded-lg hover:bg-gray-700">-</button>
+                    <span class="mx-2">${item.quantity}</span>
+                    <button onclick="updateQuantity('${item.id}', 1)" class="bg-gray-600 text-white py-1 px-2 rounded-lg hover:bg-gray-700">+</button>
+                    <button onclick="removeFromCart('${item.id}')" class="bg-red-600 text-white py-1 px-2 rounded-lg hover:bg-red-700 ml-4">Eliminar</button>
+                `;
+
+                productElement.appendChild(productDetails);
+                productElement.appendChild(productActions);
+
+                cartItemsContainer.appendChild(productElement);
+
+                total += item.price * item.quantity;
+            });
+
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        // Función para eliminar un producto del carrito
+        function removeFromCart(productId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart(); // Recargar el carrito después de eliminar el producto
+        }
+
+        // Función para actualizar la cantidad de un producto
+        function updateQuantity(productId, delta) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const product = cart.find(item => item.id === productId);
+
+            if (product) {
+                product.quantity += delta;
+                if (product.quantity <= 0) {
+                    product.quantity = 1; // Evitar que la cantidad sea 0 o negativa
+                }
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart(); // Recargar el carrito después de actualizar la cantidad
+        }
+
+        // Función para vaciar el carrito
+        function clearCart() {
+            localStorage.removeItem('cart');
+            loadCart(); // Recargar el carrito después de vaciarlo
+        }
+
+        // Cargar los productos del carrito cuando la página se carga
+        window.onload = function() {
+            loadCart();
+        };
+    </script>
+
+</body>
+
+</html>

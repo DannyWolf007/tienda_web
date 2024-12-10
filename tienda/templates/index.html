@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .category-btn {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="font-roboto bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/40" alt="Logo de la tienda" class="h-10 w-10">
+                <h1 class="text-2xl font-bold ml-3">Tienda de Ropa</h1>
+            </div>
+            <nav class="flex items-center space-x-6">
+                <a href="#" class="text-gray-700 hover:text-blue-600" onclick="openTab('inicio')">Inicio</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600" onclick="openTab('sobre-nosotros')">Sobre Nosotros</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600" onclick="openTab('contacto')">Contacto</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600" onclick="openTab('login')">Iniciar Sesión</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600" onclick="openTab('usuario')">
+                    <i class="fas fa-user-circle text-xl"></i>
+                    <!-- Icono de usuario -->
+                </a>
+                <a href="#" class="text-gray-700 hover:text-blue-600" onclick="openTab('carrito')">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <!-- Icono del carrito -->
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Pestañas de contenido -->
+    <section id="contenido" class="container mx-auto px-4 py-12">
+        <!-- INICIO -->
+        <div id="inicio" class="tab-content active">
+            <h2 class="text-3xl font-bold mb-6">INICIO</h2>
+            <div class="container mx-auto px-4 py-6">
+                <h2 class="text-2xl font-bold mb-4">Categorías</h2>
+                <nav class="space-x-6">
+                    <a href="pantalones.html" class="text-gray-700 hover:text-blue-600"></a>
+                    <a href="/trajes" class="text-gray-700 hover:text-blue-600"></a>
+                    <a href="/tenis" class="text-gray-700 hover:text-blue-600"></a>
+                    <a href="/playeras" class="text-gray-700 hover:text-blue-600"></a>
+                    <a href="/chumpas" class="text-gray-700 hover:text-blue-600"></a>
+                    <a href="/lentes" class="text-gray-700 hover:text-blue-600"></a>
+                    <a href="/descuentos" class="text-gray-700 hover:text-blue-600"></a>
+                    <a href="/accesorios" class="text-gray-700 hover:text-blue-600"></a>
+                </nav>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <div class="category-btn bg-blue-500 text-white text-center py-15 rounded-lg" onclick="goToCategory('pantalones')">
+                    <h3 class="text-2xl">Pantalones</h3><img src="https://i.pinimg.com/originals/d6/48/7d/d6487db973f4e4d60b9e5aaa2cb604b7.png">
+
+                </div>
+                <div class="category-btn bg-green-500 text-white text-center py-15 rounded-lg" onclick="goToCategory('/trajes')">
+                    <h3 class="text-2xl">Trajes</h3><img src="https://thumbs.dreamstime.com/b/trajes-de-la-tienda-de-la-ropa-de-los-hombres-72116450.jpg">
+                </div>
+                <div class="category-btn bg-red-500 text-white text-center py-15 rounded-lg" onclick="goToCategory('tenis')">
+                    <h3 class="text-2xl">Tenis</h3><img src="https://images.unsplash.com/photo-1582482020958-b838acfd9b66?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGllbmRhJTIwZGUlMjB6YXBhdGlsbGFzfGVufDB8fDB8fHww">
+
+                </div>
+                <div class="category-btn bg-yellow-600 text-white text-center py-15 rounded-lg" onclick="goToCategory('playeras')">
+                    <h3 class="text-2xl">Playeras</h3><img src="https://d1ih8jugeo2m5m.cloudfront.net/2023/11/venta-de-playeras-por-mayoreo.jpg">
+                </div>
+                <div class="category-btn bg-purple-600 text-white text-center py-15 rounded-lg" onclick="goToCategory('chumpas')">
+                    <h3 class="text-2xl">Chumpas</h3><img src="https://d1ih8jugeo2m5m.cloudfront.net/2024/08/ideas_para_tienda_de_ropa_infantil-1024x575.jpg">
+                </div>
+                <div class="category-btn bg-indigo-600 text-white text-center py-15 rounded-lg" onclick="goToCategory('lentes')">
+                    <h3 class="text-2xl">Lentes</h3><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOAwP858maY3ULFBsTFnMG9JHyTF5IMY4IKHfg9zoyiNtb09lh4vnof0mlDOeEVbbMlyo&usqp=CAU">
+                </div>
+                <div class="category-btn bg-orange-600 text-white text-center py-15 rounded-lg" onclick="goToCategory('descuentos')">
+                    <h3 class="text-2xl">Descuentos</h3><img src="https://cuadernodemarketing.com/wp-content/uploads/2015/01/promocionesydescuentos.jpg">
+                </div>
+                <div class="category-btn bg-teal-600 text-white text-center py-15 rounded-lg" onclick="goToCategory('accesorios')">
+                    <h3 class="text-2xl">Accesorios</h3><img src="https://thumbs.dreamstime.com/b/vistas-la-decoraci%C3%B3n-variada-de-tienda-interior-del-centro-comercial-accesorios-para-el-hogar-y-productos-en-planta-dom%C3%A9stica-245100232.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- SOBRE NOSOTROS -->
+        <div id="sobre-nosotros" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6">Sobre Nosotros</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Somos una tienda comprometida con ofrecer moda de alta calidad al mejor precio. Nuestra misión es brindar a nuestros clientes una experiencia de compra única y satisfactoria.
+                <p>
+                    Danny
+                </p>
+            </p>
+        </div>
+
+        <!-- CONTACTO -->
+        <div id="contacto" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6">Contacto</h2>
+            <form class="bg-white p-6 rounded-lg shadow-md">
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2" for="nombre">Nombre</label>
+                    <input type="text" id="nombre" class="w-full px-4 py-2 border rounded-lg" placeholder="Tu nombre">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2" for="email">Correo Electrónico</label>
+                    <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg" placeholder="tuemail@ejemplo.com">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2" for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" class="w-full px-4 py-2 border rounded-lg" rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Enviar</button>
+            </form>
+        </div>
+
+        <!-- INICIAR SESIÓN -->
+        <div id="login" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6">Iniciar Sesión</h2>
+            <form class="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto">
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2" for="email-login">Correo Electrónico</label>
+                    <input type="email" id="email-login" class="w-full px-4 py-2 border rounded-lg" placeholder="tuemail@ejemplo.com">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2" for="password">Contraseña</label>
+                    <input type="password" id="password" class="w-full px-4 py-2 border rounded-lg" placeholder="********">
+                </div>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 w-full"><a href="login.html" class="text-black-600 hover:underline">Iniciar sesión</a></button>
+                <p class="mt-4 text-center">
+                    ¿No tienes una cuenta?
+                    <a href="#" class="text-blue-600 hover:underline"></a>
+                    <a href="/registro" class="text-blue-600 hover:underline">Regístrate aquí</a>
+                </p>
+            </form>
+        </div>
+
+        <!-- USUARIO -->
+        <div id="usuario" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6">Usuario</h2>
+            <div class="flex justify-center space-x-6">
+                <a href="#cerrar-sesion" class="text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-door-closed text-xl"></i>
+                    <!-- Cerrar sesión -->
+                </a>
+                <a href="#mis-pedidos" class="text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-box text-xl"></i>
+                    <!-- Mis pedidos -->
+                </a>
+                <a href="#tema" class="text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-sun text-xl"></i>
+                    <!-- Tema -->
+                </a>
+                <a href="#mi-perfil" class="text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-user text-xl"></i>
+                    <!-- Mi perfil -->
+                </a>
+            </div>
+        </div>
+        <!-- Usuario (Menú desplegable) -->
+        <div class="relative">
+
+
+
+            <!-- CARRITO DE COMPRAS -->
+            <div id="carrito" class="tab-content">
+                <h2 class="text-3xl font-bold mb-6">Carrito de Compras</h2>
+                <p class="text-gray-700">Tu carrito está vacío.</p>
+            </div>
+    </section>
+
+    <script>
+        function openTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            const activeTab = document.getElementById(tabName);
+            activeTab.classList.add('active');
+        }
+
+        function goToCategory(category) {
+            // Redirige a una página con más opciones de la categoría seleccionada
+            window.location.href = `${category}`; // Cambia la URL de acuerdo a la categoría seleccionada
+        }
+    </script>
+
+</body>
+
+</html>

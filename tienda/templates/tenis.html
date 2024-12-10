@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalones - Tienda de Ropa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Agrega estilos adicionales si es necesario */
+    </style>
+</head>
+
+<body class="font-roboto bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/40" alt="Logo de la tienda" class="h-10 w-10">
+                <h1 class="text-2xl font-bold ml-3">Tienda de Ropa</h1>
+            </div>
+            <nav class="flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">Inicio</a>
+                <a href="sobre-nosotros.html" class="text-gray-700 hover:text-blue-600">Sobre Nosotros</a>
+                <a href="contacto.html" class="text-gray-700 hover:text-blue-600">Contacto</a>
+                <a href="login.html" class="text-gray-700 hover:text-blue-600">Iniciar Sesión</a>
+                <a href="usuario.html" class="text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-user-circle text-xl"></i>
+                    <!-- Icono de usuario -->
+                </a>
+                <a href="/carrito" class="text-gray-700 hover:text-blue-600">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <!-- Icono del carrito -->
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Categoría de Tenis -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold mb-6">Tenis</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            <!-- Producto 1 -->
+            <div class="bg-white border rounded-lg shadow-md overflow-hidden product" data-id="1" data-name="Tenis Puma" data-price="29.99" data-img="https://siman.vtexassets.com/arquivos/ids/2692431-800-800?v=637824637681070000&width=800&height=800&aspect=true">
+                <img src="https://siman.vtexassets.com/arquivos/ids/2692431-800-800?v=637824637681070000&width=800&height=800&aspect=true" alt="tenis 1" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">Tenis Puma</h3>
+                    <p class="text-gray-600">tenis Puma moderno, ideal para ocasiones casuales.</p>
+                    <p class="text-gray-700 font-bold">$29.99</p>
+                    <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 add-to-cart">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="bg-white border rounded-lg shadow-md overflow-hidden product" data-id="2" data-name="Tenis Adidas" data-price="34.99" data-img="https://resources.sears.com.mx/medios-plazavip/fotos/productos_sears1/original/4140875.jpg?scale=500&qlty=75">
+                <img src="https://resources.sears.com.mx/medios-plazavip/fotos/productos_sears1/original/4140875.jpg?scale=500&qlty=75" alt="tenis 2" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">Tenis Adidas</h3>
+                    <p class="text-gray-600">Tenis Adidas, ideal para un look casual y cómodo.</p>
+                    <p class="text-gray-700 font-bold">$34.99</p>
+                    <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 add-to-cart">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="bg-white border rounded-lg shadow-md overflow-hidden product" data-id="3" data-name="Tenis Jordan" data-price="49.99" data-img="https://media.gq.com.mx/photos/64514dc6cd18d7f1c032c7eb/16:9/w_2560%2Cc_limit/AJKO_1_Bleached_Aqua_par.jpg">
+                <img src="https://media.gq.com.mx/photos/64514dc6cd18d7f1c032c7eb/16:9/w_2560%2Cc_limit/AJKO_1_Bleached_Aqua_par.jpg" alt="Tenis 3" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">Tenis Jordan</h3>
+                    <p class="text-gray-600">Tenis Jordan, perfecto para climas cálidos.</p>
+                    <p class="text-gray-700 font-bold">$49.99</p>
+                    <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 add-to-cart">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="bg-white border rounded-lg shadow-md overflow-hidden product" data-id="4" data-name="Tenis Bullboxer" data-price="79.99" data-img="https://m.media-amazon.com/images/I/81zlF0HTp2L._AC_UY900_.jpg">
+                <img src="https://m.media-amazon.com/images/I/81zlF0HTp2L._AC_UY900_.jpg" alt="Tenis 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">Tenis Bullboxer</h3>
+                    <p class="text-gray-600">Tenis Bullboxer, perfecto para ocasiones formales.</p>
+                    <p class="text-gray-700 font-bold">$79.99</p>
+                    <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 add-to-cart">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-6 shadow-md">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-600">© 2024 Tienda de Ropa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Función para agregar productos al carrito
+        function addToCart(product) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            const existingProduct = cart.find(item => item.id === product.id);
+            if (existingProduct) {
+                existingProduct.quantity += 1; // Si el producto ya está en el carrito, aumentar cantidad
+            } else {
+                cart.push({...product,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart)); // Guardar en Local Storage
+        }
+
+        // Cargar productos al hacer clic en "Agregar al carrito"
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productElement = button.closest('.product');
+                const product = {
+                    id: productElement.getAttribute('data-id'),
+                    name: productElement.getAttribute('data-name'),
+                    price: parseFloat(productElement.getAttribute('data-price')),
+                    img: productElement.getAttribute('data-img')
+                };
+
+                addToCart(product);
+                alert(`${product.name} agregado al carrito`);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
